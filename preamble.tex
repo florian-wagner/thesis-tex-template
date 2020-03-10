@@ -1,0 +1,279 @@
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{colortbl}
+\definecolor{darkblue}{RGB}{50,107,164} % Bootstrap style
+%\definecolor{darkblue}{RGB}{0,0,0} % Bootstrap style
+\usepackage{pdfpages}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[helvetica]{quotchap}
+\usepackage{gensymb}
+\usepackage{xspace}
+
+% Nicer fonts
+\usepackage[sfdefault]{roboto}
+%\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage[bitstream-charter]{mathdesign}
+\renewcommand{\familydefault}{\rmdefault}
+
+% Set font for description env
+\usepackage{enumitem}
+\setlist[description]{%
+  topsep=25pt,               % space before start / after end of list
+  itemsep=5pt,               % space between items
+  font={\normalfont\bfseries}  % set the label font
+}
+
+
+\usepackage{layouts}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{ngerman}
+\usepackage{longtable} 
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+%\usepackage{array}
+\usepackage{booktabs}
+%\usepackage{paralist}
+%\usepackage{calc}
+%\usepackage{nomencl}
+\usepackage{tabulary}
+%\usepackage{tabularx}
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage{float}
+\usepackage[hang, bf]{caption}
+\usepackage{subcaption}
+\captionsetup{width=0.9\textwidth}
+
+%
+\usepackage{fancyhdr}
+
+% Handling of floats
+\usepackage[section,verbose]{placeins}
+\usepackage[all]{nowidow}
+
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+%selbst installierte packages
+\usepackage{natbib}
+\usepackage{bibentry}
+\nobibliography*
+
+% % Für Druckversion % % Auch binding offset einstellen!!!
+%\definecolor{darkblue}{RGB}{0,0,0} % Bootstrap style
+%\makeatletter
+%\def\NAT@nmfmt#1{\textit{#1}}
+%\makeatother
+
+% Counts
+\usepackage{totcount}
+\newtotcounter{citenum}
+\def\oldcite{}
+\let\oldcite=\bibcite
+\def\bibcite{\stepcounter{citenum}\oldcite}
+\usepackage[figure,table]{totalcount}
+
+%\usepackage[percent]{overpic}
+%\usepackage{wallpaper}
+%\usepackage{rotating}
+%\usepackage{units}
+
+%\usepackage{microtype}
+%itemize
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\cdot$}
+\renewcommand{\labelitemiv}{$\ast$}
+
+\selectlanguage{english}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}     % Absatzabstand
+
+\usepackage{lastpage}
+\usepackage[pdfpagelabels=true,plainpages=false, linktoc=all]{hyperref}
+\usepackage{bookmark}
+\usepackage{afterpage}
+
+\makeatletter
+\newcommand*\Autoref[1]{%
+  \begingroup
+    \let\ORI@HyRef@testreftype\HyRef@testreftype
+    \def\HyRef@testreftype##1.##2\\{%
+      \ORI@HyRef@testreftype##1.##2\\%
+      \let\ORI@HyRef@currentHtag\HyRef@currentHtag
+      \def\HyRef@currentHtag{\expandafter\MakeUppercase}%
+      \expandafter\g@addto@macro\expandafter\HyRef@currentHtag\expandafter{\ORI@HyRef@currentHtag}%
+    }%
+    \autoref{#1}%
+  \endgroup}
+\makeatother
+\hypersetup{
+    plainpages=false,
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat's bookmarks
+    pdftoolbar=true,        % show Acrobat's toolbar?
+    pdfmenubar=true,        % show Acrobat's menu?
+    pdffitwindow=true,      % page fit to window when opened    ´
+    pdftitle={PhD thesis, Florian M. Wagner, ETH Zurich (2016)},    % title
+    pdfauthor={Florian Michael Wagner},     % author
+    pdfsubject={New developments in electrical resistivity imaging with applications to geological CO\textsubscript{2} storage},   % subject of the document
+    pdfnewwindow=true,      % links in new window
+    pdfkeywords={Carbon dioxide storage, Electrical resistivity monitoring, Experimental design, Borehole effects, Hydrogeophysical inversion}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=darkblue,    % color of internal links
+    citecolor=darkblue,        % color of links to bibliography
+    filecolor=darkblue,      % color of file links
+    urlcolor=darkblue,           % color of external links
+    bookmarksnumbered=true, %Lesezeichen werden nummeriert dargestellt
+    pdfdisplaydoctitle=true,
+    pdfstartview=FitV,
+    linktocpage=true,
+%    pdfpagelayout = {TwoPageRight},
+}
+
+% Line spacing
+\renewcommand{\baselinestretch}{1.50}\normalsize
+\setlength{\headheight}{1.1\baselineskip}
+\def\sectionautorefname{Section}
+
+% Smaller linespacing in figure captions
+\usepackage{setspace}
+\captionsetup{font={small, stretch=1.2}}
+
+\newcommand{\co}{CO\textsubscript{2}\xspace}
+
+% Chapter headings
+\makeatletter
+\renewcommand*{\sectfont}{\bfseries}
+\renewcommand*{\chapnumfont}{%
+  \usefont{T1}{\@defaultcnfont}{b}{n}\fontsize{100}{120}\selectfont% Default: 100/130
+  \color{chaptergrey}%
+}
+\makeatother
+
+% Signature and Date snippet
+\newcommand*{\SignatureAndDate}[1]{%
+    \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
+    \par\noindent\makebox[2.5in][l]{#1}      \hfill\makebox[2.0in][l]{Date}%
+}%
+
+%\usepackage{pifont} % checkboxes
+
+\usepackage[breakable, theorems, skins]{tcolorbox}
+\tcbset{enhanced}
+
+\definecolor{lightgrey}{HTML}{F5F5F5}
+%\definecolor{lightgrey}{gray}{0.95}
+\definecolor{darkgrey}{gray}{0.92}
+\definecolor{rulegrey}{gray}{0.82}
+
+\DeclareRobustCommand{\mybox}[2][lightgrey]{%
+\begin{tcolorbox}[   %% Adjust the following parameters at will.
+        breakable,
+        left=5pt,
+        right=5pt,
+        top=5pt,
+        bottom=5pt,
+        colback=#1,
+        colframe=darkgrey,
+        width=\dimexpr\textwidth\relax, 
+        enlarge left by=0mm,
+        boxsep=5pt,
+        arc=5pt,outer arc=5pt,
+        ]
+        #2
+\end{tcolorbox}
+}
+
+\newcommand{\cref}[1]{\Autoref{#1} (\nameref{#1})}
+
+\renewcommand{\autodot}{}% Remove all end-of-counter dots
+
+\usepackage{etoolbox}
+
+% Show or do not show A,B,C in pdf bookmarks
+\providecommand*\texorpdfstring[2]{#1}
+\providecommand*\appendixmore{}% falls appendixprefix=false
+\newcommand*{\SavedOriginalchaptertocentry}{}
+\appto\appendixmore{%
+  \let\SavedOriginaladdchaptertocentry\addchaptertocentry
+  \renewcommand*{\addchaptertocentry}[2]{%
+    \ifstr{#1}{}{
+      \SavedOriginalchaptertocentry{#1}{#2}
+    }
+    {
+      \SavedOriginaladdchaptertocentry{}{%
+        \texorpdfstring{
+          \string\expandafter\string\MakeUppercase\string\appendixname
+          ~#1:\string\enskip{}#2
+        }{#2}%
+      }%
+    }%
+  }%
+}
+
+% References
+\newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+}
+
+% for CV
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{F}{>{\raggedleft}p{0.14\textwidth}}
+\newcolumntype{W}{p{0.8\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+
+% HEADER
+\pagestyle{fancy}
+\fancypagestyle{main}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{2.5pt}% 2pt header rule
+  \renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{rulegrey}\leaders\hrule height \headrulewidth\hfill}}
+  \fancyhead[EC]{\sffamily\nouppercase\leftmark}
+  \fancyhead[OC]{\sffamily\nouppercase\rightmark}
+  \fancyhead[EL]{\sffamily\bfseries\textbf\thepage}
+  \fancyhead[OR]{\sffamily\bfseries\textbf\thepage}
+  \fancyheadoffset{0cm}
+}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}% 2pt header rule
+  \fancyfoot[EL]{\bfseries\thepage} % bei druck auskommentieren
+  \fancyfoot[OR]{\bfseries\thepage}
+}
+
+\appto\frontmatter{\pagestyle{empty}}
+\appto\mainmatter{\pagestyle{main}}
+\appto\backmatter{\pagestyle{main}}
+
+\usepackage{minitoc}

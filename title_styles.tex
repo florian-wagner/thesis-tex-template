@@ -1,0 +1,21 @@
+% Section title font styles
+
+\titleformat{\section}[hang]{\usefont{T1}{qhv}{b}{n}\selectfont}
+{\Large\thesection}{13pt}{\Large}[{\titlerule[0pt]}]
+
+\titleformat{\section}
+{\sffamily\Large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}
+{\sffamily\bfseries\large}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}
+{\sffamily\bfseries\normalsize}{\thesubsubsection}{0.8em}{}
+\titleformat{\paragraph}[runin]
+{\sffamily\bfseries\normalsize}{\theparagraph}{0.8em}{}
+\titleformat{\subparagraph}[runin]
+{\sffamily\bfseries\normalsize}{\thesubparagraph}{1em}{}
+
+\titlespacing\section{0pt}{11pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{11pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}{11pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\paragraph{0pt}{11pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subparagraph{0pt}{11pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
