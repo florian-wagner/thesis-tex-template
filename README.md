@@ -10,10 +10,10 @@ This is the LaTeX template of [my PhD thesis](https://www.research-collection.et
 | Fabienne Reiser        | 2018 | Imaging Geothermal Reservoirs Using Vertical Seismic Profiling                                 | https://doi.org/10.3929/ethz-b-000299570 |
 | David Sollberger       | 2018 | Six-component seismology: Joint processing of translational and rotational ground-motion       | https://doi.org/10.3929/ethz-b-000296927 |
 | Cédéric Van Renterghem | 2019 | Novel developments in spatial wavefield gradient research for elastic wavefield decomposition  | https://doi.org/10.3929/ethz-b-000372269 |
-| Patrick Elison         | 2019 | ?                                                                                              | ?                                        |
-| Nele Börsing           | 2019 | ?                                                                                              | ?                                        |
-| Theodor Becker         | 2019 | ?                                                                                              | ?                                        |
-| Claudio Jordi          | 2019 | ?                                                                                              | ?                                        |
+| Patrick Elison         | 2020 | Data-driven focusing and two-way wave modeling with applications to seismic processing and imaging | https://doi.org/10.3929/ethz-b-000408969 |
+| Nele Börsing           | 2020 | ?                                                                                              | ?                                        |
+| Theodor Becker         | 2020 | ?                                                                                              | ?                                        |
+| Claudio Jordi          | 2020 | ?                                                                                              | ?                                        |
 
 ## Compile via Makefile
 
